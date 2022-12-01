@@ -3,7 +3,6 @@ package main
 import (
 	"aoc2022/utils"
 	"fmt"
-	"log"
 	"os"
 	"sort"
 	"strings"
@@ -41,11 +40,7 @@ func part2() int64 {
 }
 
 func getInput() []string {
-	data, err := os.ReadFile("./input")
-
-	if err != nil {
-		log.Fatal(err)
-	}
+	data, _ := os.ReadFile("./input")
 
 	return strings.Split(string(data), "\r\n\r\n")
 }
