@@ -36,3 +36,22 @@ func MaxInt(n1 int64, n2 int64) int64 {
 		return n1
 	}
 }
+
+func SliceContains(elems []rune, v rune) bool {
+	for _, s := range elems {
+		if v == s {
+			return true
+		}
+	}
+	return false
+}
+
+func AllTrue(bools []bool) bool {
+	ret := true
+
+	for _, b := range bools {
+		ret = ret && b
+	}
+
+	return ret
+}
