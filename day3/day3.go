@@ -49,17 +49,14 @@ func getStringSame(ss []string) []rune {
 	for _, r := range s1 {
 		allContains := []bool{}
 		for _, s := range rest {
-			if strings.ContainsRune(s, r) {
-				allContains = append(allContains, true)
-			} else {
-				allContains = append(allContains, false)
-			}
+			allContains = append(allContains, strings.ContainsRune(s, r))
 		}
 
 		if utils.AllTrue(allContains) && !utils.SliceContains(same, r) {
 			same = append(same, r)
 		}
 	}
+
 	return same
 }
 
